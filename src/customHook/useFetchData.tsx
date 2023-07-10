@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { apiKey } from "../Api/apiKey";
 import { reducer } from "../reducer/Reducer";
 
@@ -8,8 +8,8 @@ export const useFetchMovie = () => {
 		isLoading: false
 	});
 
-const term: string = "superman"
-const type: string = "movie"
+	const [ term, setTerm ] = useState("superman")
+	const [ type, setType ] = useState("movie")
 
   // let response: any;
 	// const fetchData = async() => {
@@ -26,5 +26,5 @@ const type: string = "movie"
 		return () => { ignore = true }
 	}, [term, type])
 
-	return { data, isLoading, error }
+	return { data, isLoading, error, term, type, setTerm, setType }
 }
