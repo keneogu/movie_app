@@ -5,6 +5,7 @@ import { Header } from './Header';
 import { PageNotFound } from './pages/PageNotFound';
 import { MoviesContext } from './reducer/MovieContext';
 import './App.css';
+import { MovieDetails } from './pages/MovieDetails';
 
 const App: FC = () => {
 
@@ -15,6 +16,7 @@ const App: FC = () => {
           <Header />
           <Routes>
             <Route path='/' element={<Home />}/>
+            <Route path='/movie/:imdbID' element={<MovieDetails />}/>
             <Route path="*" element={<PageNotFound />}/>
           </Routes>
         </Router>
