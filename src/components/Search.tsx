@@ -9,8 +9,8 @@ export const Search: FC = () => {
 
 	console.log(term)
 	return (
-		<div className='flex justify-center items-center'>
-			<div className='mx-3 border-2 rounded-md'>
+		<div className='flex flex-col md:flex-row justify-center items-center'>
+			<div className='mb-2 md:mb-0 mx-3 border-2 rounded-md'>
 				<input type="text" onChange={(e) => setSearchTerm(e.target.value)} className='outline-0 px-1'/>
 				<button onClick={() => setTerm(searchTerm)} className='bg-slate-500 text-white px-2 rounded-l-md'>search</button>
 			</div>
