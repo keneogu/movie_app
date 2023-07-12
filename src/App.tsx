@@ -6,20 +6,23 @@ import { PageNotFound } from './pages/PageNotFound';
 import { MoviesContext } from './reducer/MovieContext';
 import './App.css';
 import { MovieDetails } from './pages/MovieDetails';
+import { MoviesContextID } from './reducer/MovieIDContext';
 
 const App: FC = () => {
 
   return (
-      <div className="App">
+      <div className="App overflow-hidden">
         <MoviesContext>
-        <Router>
-          <Header />
-          <Routes>
-            <Route path='/' element={<Home />}/>
-            <Route path='/movie/:imdbID' element={<MovieDetails />}/>
-            <Route path="*" element={<PageNotFound />}/>
-          </Routes>
-        </Router>
+          <MoviesContextID>
+            <Router>
+              <Header />
+              <Routes>
+                <Route path='/' element={<Home />}/>
+                <Route path='/movie/:imdbID' element={<MovieDetails />}/>
+                <Route path="*" element={<PageNotFound />}/>
+              </Routes>
+            </Router>
+          </MoviesContextID>
         </MoviesContext>
       </div>
   );
