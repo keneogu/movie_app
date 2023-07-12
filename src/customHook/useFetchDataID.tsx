@@ -15,7 +15,7 @@ const useFetchDataID = () => {
 	useEffect(() => {
 		let ignore = false;
 		dispatch({ type: 'request' })
-		axios(`http://www.omdbapi.com/?apikey=${apiKey}&i=${id}&Plot=full`)
+		axios(`https://www.omdbapi.com/?apikey=${apiKey}&i=${id}&Plot=full`)
 			.then(results => { if (!ignore) dispatch({ type: 'success', results: results?.data }); },
 				(error) => dispatch({ type: 'failure', error }))
 		return () => { ignore = true }

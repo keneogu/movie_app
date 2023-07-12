@@ -14,7 +14,7 @@ export const useFetchMovie = () => {
 	useEffect(() => {
 		let ignore = false;
 		dispatch({ type: 'request' })
-		axios(`http://www.omdbapi.com/?apikey=${apiKey}&s=${term}&type=${type}`)
+		axios(`https://www.omdbapi.com/?apikey=${apiKey}&s=${term}&type=${type}`)
 		.then(results => { if (!ignore) dispatch({ type: 'success', results: results?.data }); },
 		 (error) => dispatch({ type: 'failure', error }))
 		return () => { ignore = true }
