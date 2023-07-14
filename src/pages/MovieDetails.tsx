@@ -21,10 +21,10 @@ export const MovieDetails: FC = () => {
 			<div className='mx-5'>
 				{data && data.Title &&
 					<div className='flex flex-col md:flex-row my-5 justify-start text-start'>
-						<div className='w-full md:w-2/6'>
+						<div className='search-input w-full md:w-2/6'>
 							<img src={data.Poster} alt="" style={{ height: '400px'}} className='h-full w-full lg:h-[500px] '/>
 						</div>
-						<div className='mt-5 md:ml-12 md:w-4/6'>
+						<div className='select-input mt-5 md:ml-12 md:w-4/6'>
 							<h3 className='font-bold text-3xl mb-3'>{data.Title}</h3>
 							<p className='text-lg leading-tight py-2 md:text-base'>{data.Plot}</p>
 							<h5 className='text-lg py-1'>Directed by: {data.Director}</h5>
