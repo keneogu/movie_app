@@ -1,0 +1,48 @@
+.movie-title {
+	position: relative;
+	animation-name: heading;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes heading {
+	0%{left: -800px}
+	50% {left: 700px;}
+	100%{left: 0}
+}
+
+.search-input {
+	position: relative;
+	animation-name: search;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes search {
+	0%{left: -800px;}
+	100%{left: 0;}
+}
+
+.select-input {
+	position: relative;
+	animation-name: select;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes select {
+	0%{right: -800px;}
+	100%{right: 0;}
+}
+
+.body-card {
+	position: relative;
+	animation-name: card;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes card {
+	0%{bottom: -800px;}
+	100%{bottom: 0;}
+}

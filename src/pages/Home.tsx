@@ -7,14 +7,16 @@ export function Home () {
 
 	return (
 		<div className="container sm:mx-auto my-10">
-			{isLoading && <span>Loading...</span>}
-			{error  && <span>Error: {error}</span>}
+			{isLoading ? <span>Loading...</span>
+
+			: error ? <span>Error: {error}</span> :
+			
 			<div>
 				<Search />
 				<div className='w-full flex my-10'>
 					<ul className='list-none flex flex-col sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:gap-8'>
 				{data && data.Search && data.Search.map((item: any) => (
-					<div key={item.imdbID} className='block relative my-8 md:my-2 bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden'>
+					<div key={item.imdbID} className='body-card block relative my-8 md:my-2 bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden'>
 						<Link to={`/movie/${item.imdbID}`}>
 							<div className='w-full'>
 								<img src={item.Poster} alt="item_image" className="inset-0 h-full w-full object-contain p-2"/>
@@ -30,6 +32,7 @@ export function Home () {
 			</ul>
 				</div>
 			</div>
+}
 		</div>
 	);
 }
